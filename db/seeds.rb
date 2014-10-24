@@ -1,0 +1,1 @@
+# User.create(name:"柴凯龙",sex:"男",card:"2011211032")

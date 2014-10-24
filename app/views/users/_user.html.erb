@@ -1,0 +1,9 @@
+<tr>
+  <td><%= user.card %></td>
+  <td><%= link_to user.name , user_path(user)%></td>
+  <td><%= user.sex %></td>
+  <td><%= user.tel %></td>
+  <td><%= user.last_register.get_action if user.last_register%></td>
+  <td><%= user.last_register.register_time.strftime("%Y-%m-%d"" %H:%M") if user.last_register%></td>
+  <td><%= link_to '删除', user, method: :delete, data: { confirm: '确定删除吗？' }%></td>
+</tr>

@@ -1,0 +1,86 @@
+<h4 class="index_h4">
+  <span class="glyphicon glyphicon-calendar"></span>签到记录
+  <span class="igron user_id_for_caleender"><%= @user.id %></span>
+</h4>
+<!-- 个人信息栏 -->
+<div id="signin_box" class="user_infomation">
+  <div class="user_db_infomation">
+  	<a href="#new_user_box">
+  	  <%= image_tag(@user.user_avatar_url) if @user.user_avatar? %>
+      <p class="infomation_name"><%= @user.name %></p>
+      <p class="infomation_tel"><em><%= @user.tel %></em></p>
+    </a>
+  </div>
+  <div class="user_count_infomation">
+  	<p class="count_hour_num">
+  		共<span class="user_one_month_time"></span>小时
+  	</p>
+  	<p class="count_sort">本周排名：<span><%= @week_rank%></span></p>
+  	<p class="count_sort">本月排名：<span><%= @month_rank%></span></p>
+  </div>
+</div>
+<!-- 日历考勤表 -->
+<div id="signin_box" class="user_month_cale">
+  <article>
+	<div class="calendar_title">签到记录</div>
+	<div class="calender_select_month">
+	  <a class="standard_button2 jq_calendar_today" style="line-height:25px;">当月</a>
+	  <select name="cYear"  class="standard_select cyear">
+	    <% (2014..2020).each do |i| %>
+		  <option><%= i %></option>
+	    <% end %>
+	  </select>
+	  <select name="cMonth"  class="standard_select cmonth">
+	    <% (1..12).each do |i| %>
+	      <option><%= i %></option> 
+	    <% end %>
+	  </select>
+	</div>
+	<div class="jq_calendar"></div>
+	<div class="clr"></div>
+  </article>
+</div>
+<div class="clr"></div>
+<!-- 修改信息 -->
+<div>
+  <h4 class="index_h4" id="new_user_box">
+  <span class="glyphicon glyphicon-pencil"></span>修改信息
+  </h4>
+  <div id="signin_box">
+    
+    <%= form_for(@user) do |f| %>
+      <div class="form-group">
+        <%= f.label :姓名 %>
+        <%= f.text_field :name,:class => "form-control input—validate"%>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :照片 %>
+        <%= f.file_field :user_avatar,:class => "form-control"%>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :卡号 %>
+        <%= f.text_field :card,:class => "form-control input—validate"%>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :电话 %>
+        <%= f.text_field :tel,:class => "form-control input—validate"%>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :性别 %>
+        <%=f.radio_button :sex, "男",:checked => true%>
+        <%=f.label :sex,"男" %>
+        <%=f.radio_button :sex, "女" %>
+        <%=f.label :sex,"女" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit "提交", class: "btn btn-success btn-large signin_box_button"%>
+      </div>
+      <div class="clr"></div>
+    <% end %>
+  </div>
+</div>

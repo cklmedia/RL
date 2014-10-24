@@ -1,0 +1,79 @@
+<!-- 成员列表块 -->
+<div>
+  <h4 class="index_h4">
+    <span class="glyphicon glyphicon-user"></span>实验室人员
+    <%= link_to("#new_user_box",:class =>"btn btn-success btn-xs") do %>
+    <span class="glyphicon glyphicon-plus plus_margin"></span>
+    新增
+    <% end %>
+    <span class="index_user_all">共 <%= @users.count %> 人</span>
+  </h4>
+  <table class="table table-bordered index_table">
+    <thead>
+      <th>Card</th>
+      <th>姓名</th>
+      <th>性别</th>
+      <th>电话</th>
+      <th>最后一次操作</th>
+      <th>最后一次操作时间</th>
+      <th>控制</th>
+    </thead>
+    <tbody>
+      <%= render @users if @users%>
+    </tbody>
+  </table>
+</div>
+<!-- 新增用户块 -->
+<div>
+  <h4 class="index_h4" id="new_user_box">
+  <span class="glyphicon glyphicon-plus"></span>添加成员
+  </h4>
+  <div id="signin_box">
+    
+    <%= form_for(@user) do |f| %>
+      <div class="form-group">
+        <%= f.label :姓名 %>
+        <%= f.text_field :name,:class => "form-control input—validate"%>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :照片 %>
+        <%= f.file_field :user_avatar,:class => "form-control input—validate"%>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :卡号 %>
+        <%= f.text_field :card,:class => "form-control input—validate"%>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :电话 %>
+        <%= f.text_field :tel,:class => "form-control input—validate"%>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :性别 %>
+        <%=f.radio_button :sex, "男",:checked => true%>
+        <%=f.label :sex,"男" %>
+        <%=f.radio_button :sex, "女" %>
+        <%=f.label :sex,"女" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit "提交", class: "btn btn-success btn-large signin_box_button"%>
+      </div>
+      <div class="clr"></div>
+    <% end %>
+  </div>
+</div>
+<!-- 实验室简介 -->
+<div>
+  <h4 class="index_h4">
+    <span class="glyphicon glyphicon-book"></span>实验室简介
+  </h4>
+  <div id="signin_box">
+    <article>
+      <p>杭师大金之路实验室现有两大研究开发模块，APP和WEB。其中APP小组由莫庸工程师带领，WEB小组由柴凯龙工程师带领。其次，本实验室由专业的教师和专业工程师陪伴着您的学习与工作。本实验室有丰富的开发经验，更有优秀研究生从事各项研究活动。整个实验室充满着积极、阳光、乐观向上的精神而蓬勃快速发展。欢迎您来到我们的TEAM。</p>
+    </article>
+  </div>
+</div>

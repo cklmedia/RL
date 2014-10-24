@@ -1,0 +1,42 @@
+@import "bootstrap";
+body{
+	padding: 0;margin:0;width: 80%;margin: auto;
+	background-image: url(bac.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+/*bottom*/
+#page_bottom{margin: 0;}
+#page_bottom p{width: 100%;margin: auto;text-align: center;padding: 10px 0 0 0;color: #357EB2; }
+
+.clr{clear: both;}
+.header_nav{background: rgb(56, 68, 62);opacity: 0.5;margin-top:100px;}
+.header_link{color: rgb(17, 229, 132) !important;font-size: 32px;}
+.header_p{color: #0AF2E9 !important;font-size: 25px;margin: 8px;}
+.index_table{color: rgb(131, 230, 234);opacity: 0.5;background: rgb(56, 68, 62);text-align: center;}
+.index_table th{text-align: center;color: rgb(166, 133, 234);}
+.index_table a{color: rgb(17, 229, 132);}
+.index_h4{color: white;opacity: 0.7;}
+.index_user_all{float: right;margin-right: 20px;}
+#signin_box{border: 1px solid #E7E7E9;background: rgb(56, 68, 62);opacity: 0.5;padding: 15px;}
+#signin_box label{color: #0AF2E9;font-size: 20px;margin-right: 30px;}
+#signin_box article p{color: #C8F0EF;}
+#signin_box article p::first-letter{font-size: 40px;}
+.error_input{background: rgb(221, 113, 113);}
+.show_month_hour{float: right;}
+.show_month_hour h4{color: white;}
+.calendar_title{color: rgb(114, 237, 29);text-align: center;font-size: 20px;}
+.igron{display: none;}
+.calender_select_month{margin:5px 20px 0px 0px;float: right;}
+.user_infomation{width: 16%;float: left;margin-right: 1%;}
+.user_month_cale{width: 83%;float: right;}
+.user_infomation img{width: 100%}
+.user_db_infomation .infomation_name{color: rgb(15, 223, 112);font-size: 25px;text-align: center;margin-bottom: 0;}
+.user_db_infomation .infomation_tel{color: white;font-size: 18px;text-align: center;border-bottom: 1px solid #fff;}
+.user_count_infomation {color: white;}
+.user_count_infomation .count_hour_num{font-size: 19px;}
+.user_count_infomation .count_hour_num span{font-size: 38px;}
+.count_sort{font-size: 19px;}
+.count_sort span{font-size: 38px;}
+.edit_user_infoemation{margin-left: 15%;color: yellow;}
